@@ -57,6 +57,8 @@ const handleAddTask = () => {
   const div = document.createElement("div");
   const removeBtnDiv = document.createElement("div");
 
+  console.log(inputEl.value);
+
   li.append(div, removeBtnDiv);
   div.append(div_text);
   // li.append(comment);
