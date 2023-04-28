@@ -84,6 +84,7 @@ const handleSubmit2 = (event) => {
 
   // Update the contact list
   getContacts();
+  
 };
 
 
