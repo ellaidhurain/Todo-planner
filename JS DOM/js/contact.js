@@ -118,30 +118,30 @@ const getContacts = () => {
       emailCell.innerText = email;
       row.appendChild(emailCell);
 
-      const countryCell = document.createElement("td");
-      countryCell.classList.add(
-        "p-2",
-        "border",
-        "border-gray-400",
-        "text-white"
-      );
-      countryCell.innerText = country;
-      row.appendChild(countryCell);
+      // const countryCell = document.createElement("td");
+      // countryCell.classList.add(
+      //   "p-2",
+      //   "border",
+      //   "border-gray-400",
+      //   "text-white"
+      // );
+      // countryCell.innerText = country;
+      // row.appendChild(countryCell);
 
-      const checkboxCell = document.createElement("td");
-      checkboxCell.classList.add(
-        "p-2",
-        "border",
-        "border-gray-400",
-        "text-white"
-      );
-      checkboxCell.innerText = checkbox;
-      row.appendChild(checkboxCell);
+      // const checkboxCell = document.createElement("td");
+      // checkboxCell.classList.add(
+      //   "p-2",
+      //   "border",
+      //   "border-gray-400",
+      //   "text-white"
+      // );
+      // checkboxCell.innerText = checkbox;
+      // row.appendChild(checkboxCell);
 
-      const typeCell = document.createElement("td");
-      typeCell.classList.add("p-2", "border", "border-gray-400", "text-white");
-      typeCell.innerText = type;
-      row.appendChild(typeCell);
+      // const typeCell = document.createElement("td");
+      // typeCell.classList.add("p-2", "border", "border-gray-400", "text-white");
+      // typeCell.innerText = type;
+      // row.appendChild(typeCell);
 
       contactList.appendChild(row);
     });
