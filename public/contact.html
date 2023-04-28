@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+
+    <link rel="stylesheet" href="output-style.css" />
+    <link rel="stylesheet" href="/JS DOM/css/style1.css" />
+  </head>
+  <body>
+    <header
+      class="w-100 text-center header shadow-md px-4 py-4 flex justify-between items-center"
+    >
+      <span></span>
+      <span class="text-2xl text-white">🎯Task Me</span>
+      <a class="text-white" href="index.html" style="font-size: 16px">Home</a>
+    </header>
+
+    <div class="tog">
+      <label for="togg" class="toggle m-2">
+        <input type="checkbox" class="checkbox" id="togg" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <main id="main" class="flex flex-col justify-center items-center w-100">
+      <div class="form-container bg-white rounded-md">
+        <form id="form" class="p-6 m-8" name="contact">
+          <div class="text-center">
+            <span>Create User</span>
+          </div>
+          <input
+            type="text"
+            id="input"
+            placeholder="Enter name"
+            name="name"
+            required
+            class="p-2 w-11/12 m-2 border border-1 border-neutral-200 rounded-md focus:ring-0 focus:outline-none focus:shadow-outline focus:border-emerald-300"
+          />
+
+          <input
+            type="email"
+            id="input"
+            placeholder="Enter email"
+            name="email"
+            required
+            class="p-2 w-11/12 m-2 border border-1 border-neutral-200 rounded-md focus:ring-0 focus:outline-none focus:shadow-outline focus:border-emerald-300"
+          />
+
+          <!-- <label for="select">country</label> -->
+          <select
+            id="select"
+            name="country"
+            class="p-2 w-11/12 m-2 border border-1 border-neutral-200 rounded-md text-center focus:ring-0 focus:outline-none focus:shadow-outline focus:border-emerald-300"
+          >
+            <option value="">-- select country --</option>
+            <option value="IND">india</option>
+            <option value="LK">sri langa</option>
+          </select>
+
+          <div class="text-center p-3">
+            <label for="radio" class="p-2">
+              <input type="radio" id="radio" name="type" value="above 18" />
+              above 18</label
+            >
+            <label for="radio" class="p-2">
+              <input type="radio" id="radio" name="type" value="below 18" />
+              below 18</label
+            >
+          </div>
+          <div class="terms text-center m-2">
+            <label for="checkbox">
+              <input
+                type="checkbox"
+                id="checkbox"
+                name="checkbox"
+                value="checked"
+              />
+              <a href="https://chat.openai.com/" onclick="return false"
+                >accept terms and conditions</a
+              >
+            </label>
+          </div>
+          <div class="text-center p-3">
+            <input
+              type="submit"
+              name="submit"
+              class="btn-save px-4 py-2 rounded-md shadow-xl bg-emerald-500 text-white"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="p-3">
+        <table class="border-collapse border border-gray-400 w-100">
+          <thead>
+            <tr class="bg-emerald-500 head">
+              <th class="p-2 border border-gray-400 text-white">Name</th>
+              <th class="p-2 border border-gray-400 text-white">Email</th>
+              <th class="p-2 border border-gray-400 text-white">Country</th>
+              <th class="p-2 border border-gray-400 text-white">Checkbox</th>
+              <th class="p-2 border border-gray-400 text-white">Type</th>
+            </tr>
+          </thead>
+          <tbody id="contactList"></tbody>
+        </table>
+      </div>
+
+      <!-- <div>
+        <button id="btn">donate</button>
+        <form class="donate">
+          <input type="number" min="50" value="50" />
+          <button id="pay">pay</button>
+        </form>
+      </div> -->
+    </main>
+
+    <script src="/JS DOM/js/contact.js"></script>
+    <script src="/JS DOM/js/toggle.js"></script>
+  </body>
+</html>

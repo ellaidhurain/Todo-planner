@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Ai</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="output-style.css" />
+    <link rel="stylesheet" href="/JS DOM/css/style1.css" />
+  </head>
+
+  <!-- <body oncontextmenu="return false"> -->
+  <body oncopy="alert('copy not allowed')" >
+    <header
+      class="w-100 text-center header shadow-md px-4 py-4 flex justify-between items-center"
+    >
+      <span></span>
+      <span class="text-2xl text-white">🎯Task Me</span>
+      <a class="text-white" href="contact.html" style="font-size: 16px"
+        >Contact</a
+      >
+    </header>
+
+    <div class="tog">
+      <label for="togg" class="toggle m-2">
+        <input type="checkbox" class="checkbox" id="togg" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <main id="main" class="flex flex-col justify-center items-center w-100">
+      <!-- <div class="alert"> -->
+      <!-- <strong>✅ success! </strong> chat updated!
+      </div> -->
+      <!-- <h1 id="heading">Artificial Intelligence</h1> -->
+
+      <div
+        class="input-container bg-white p-6 m-8 rounded-md flex justify-between w-4/12"
+      >
+        <input
+          type="text"
+          placeholder="Enter task name..."
+          class="input-name w-11/12 mr-2 focus:ring-0 focus:outline-none focus:shadow-outline focus:border-emerald-300 p-2 w-100 border border-1 border-neutral-200 shadow-lg rounded-md"
+          id="input"
+          name="name"
+          value=""
+          data-isAlive="true"
+        />
+        <button
+          class="btn-save px-4 py-0 rounded-md shadow-xl bg-emerald-500 text-white"
+          id="save-btn"
+        >
+          save
+        </button>
+      </div>
+
+      <section>
+        <div id="textlength"></div>
+        <div id="show-image">
+          <img
+            class="opacity-80 bg-white w-100"
+            
+            src="https://assets-global.website-files.com/5f16d69f1760cdba99c3ce6e/60cb24b95966192ae387b2c4_UX%20Flow%20big.png"
+            alt="comedy"
+          />
+          <h5 class="opacity-80 w-100 bg-white p-3 text-center">create your task.</h5>
+        </div>
+
+        <ul id="response-container" class="my-4 p-3 rounded-md w-100">
+          <!-- <li class="chat-item" id="task-item">
+          <div>Exercise</div>
+          <div onclick="removeItem(event)">
+            <i c
+            lass="fa-solid fa-trash"></i>
+          </div>
+        </li>
+         -->
+        </ul>
+      </section>
+
+      <div>
+        <!-- <button
+          id="resync"
+          style="margin-top: 10px"
+          class="btn-save px-4 py-2 mb-3 rounded-md shadow-xl bg-emerald-500 text-white"
+        >
+          clone
+        </button>
+        <div id="duplicate"></div>
+      </div> -->
+
+      <!-- <form style="cursor: pointer" id="form">
+        form
+        <div id="div">
+          div
+          <p id="para">p</p>
+        </div>
+      </form>  -->
+
+      <!-- <p id="api_data"></p> -->
+    </main>
+
+    <!-- async load all contents in the page before script fully downloaded -->
+    <!-- defer load contents after script downloaded -->
+    <script src="/JS DOM/js/main.js"></script>
+    <script src="/JS DOM/js/toggle.js"></script>
+  </body>
+</html>
+
+<!-- html parse code line by line and converts html elements into dom object  -->
