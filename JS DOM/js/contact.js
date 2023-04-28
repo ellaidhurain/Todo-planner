@@ -1,4 +1,3 @@
-const inputEl = document.getElementById("input");
 const form = document.querySelector("form");
 const input = document.querySelector("form input");
 const submitEl = document.querySelector("form input[type='submit']");
@@ -8,30 +7,29 @@ const table = document.querySelector("table");
 
 let selectedId; // undefined
 
-table.addEventListener("click", (e) => {
-  target = e.target;
-  // get a closest tr element
-  const closestTr = target.closest("tr");
+// table.addEventListener("click", (e) => {
+//   target = e.target;
+//   // get a closest tr element
+//   const closestTr = target.closest("tr");
 
-  // avoid selecting Table head
-  if (target.tagName === "TH") {
-    return;
-  }
+//   // avoid selecting Table head
+//   if (target.tagName === "TH") {
+//     return;
+//   }
 
-  if (selectedId != undefined) {
-    selectedId.classList.remove("active");
-  }
+//   if (selectedId != undefined) {
+//     selectedId.classList.remove("active");
+//   }
 
-  // get the value of target tr
-  selectedId = closestTr;
+//   // get the value of target tr
+//   selectedId = closestTr;
 
-  if (selectedId) {
-    selectedId.classList.add("active");
-  }
+//   if (selectedId) {
+//     selectedId.classList.add("active");
+//   }
 
-  // console.log(e.target.textContent);
-});
-
+//   // console.log(e.target.textContent);
+// });
 
 // get form element using forms property. from forms we can get the attributes of form element
 // contact is value name attribute
@@ -42,12 +40,13 @@ const formEl = document.forms.contact;
 // const inputForm2 = formEl.name; // we can use this also
 // const { Name, Checkbox, Submit } = formEl.elements; // formEl.elements returns object
 
-formEl.addEventListener("submit", (e) => {
-  e.preventDefault();
+const handleSubmit2 = (event) => {
+ 
+  event.preventDefault()
   // destructuring is a technique for extracting values from complex data types such as arrays, objects, or tuples and assigning them to variables in a concise and efficient way.
   // Destructuring allows you to avoid writing repetitive code to access the individual elements of a data structure, and instead, you can extract the specific values you need and assign them to variables using a simplified syntax.
 
-  // destructuring an object
+  // // destructuring an object
   const { name, email, checkbox, submit } = formEl.elements; // formEl.elements returns object
 
   // array destructuring
@@ -80,16 +79,17 @@ formEl.addEventListener("submit", (e) => {
       ])
     );
   }
-   // Clear the form
-   formEl.reset();
+  // Clear the form
+  formEl.reset();
 
-   // Update the contact list
-   getContacts();
+  // Update the contact list
+  getContacts();
+};
 
-});
+
+formEl.addEventListener("submit", handleSubmit2);
 
 const contactList = document.querySelector("#contactList");
-
 const getContacts = () => {
   const storedContacts = localStorage.getItem("contacts");
   if (!storedContacts) {
@@ -98,49 +98,53 @@ const getContacts = () => {
   }
 
   const fetchedContacts = JSON.parse(storedContacts);
-    // Clear the existing rows from the contactList element
-    contactList.innerHTML = "";
+  // Clear the existing rows from the contactList element
+  contactList.innerHTML = "";
+  if (fetchedContacts !== null) {
+    fetchedContacts.forEach((contact) => {
+      const { name, email, country, checkbox, type } = contact;
 
-  fetchedContacts.forEach((contact) => {
-    const { name, email, country, checkbox, type } = contact;
+      const row = document.createElement("tr");
+      row.classList.add("text-white");
 
-    const row = document.createElement("tr");
-    row.classList.add("text-white");
+      const nameCell = document.createElement("td");
+      nameCell.classList.add("p-2", "border", "border-gray-400", "text-white");
+      nameCell.innerText = name;
+      row.appendChild(nameCell);
 
-    const nameCell = document.createElement("td");
-    nameCell.classList.add("p-2", "border", "border-gray-400", "text-white");
-    nameCell.innerText = name;
-    row.appendChild(nameCell);
+      const emailCell = document.createElement("td");
+      emailCell.classList.add("p-2", "border", "border-gray-400", "text-white");
+      emailCell.innerText = email;
+      row.appendChild(emailCell);
 
-    const emailCell = document.createElement("td");
-    emailCell.classList.add("p-2", "border", "border-gray-400", "text-white");
-    emailCell.innerText = email;
-    row.appendChild(emailCell);
+      const countryCell = document.createElement("td");
+      countryCell.classList.add(
+        "p-2",
+        "border",
+        "border-gray-400",
+        "text-white"
+      );
+      countryCell.innerText = country;
+      row.appendChild(countryCell);
 
-    const countryCell = document.createElement("td");
-    countryCell.classList.add("p-2", "border", "border-gray-400", "text-white");
-    countryCell.innerText = country;
-    row.appendChild(countryCell);
+      const checkboxCell = document.createElement("td");
+      checkboxCell.classList.add(
+        "p-2",
+        "border",
+        "border-gray-400",
+        "text-white"
+      );
+      checkboxCell.innerText = checkbox;
+      row.appendChild(checkboxCell);
 
-    const checkboxCell = document.createElement("td");
-    checkboxCell.classList.add(
-      "p-2",
-      "border",
-      "border-gray-400",
-      "text-white"
-    );
-    checkboxCell.innerText = checkbox;
-    row.appendChild(checkboxCell);
+      const typeCell = document.createElement("td");
+      typeCell.classList.add("p-2", "border", "border-gray-400", "text-white");
+      typeCell.innerText = type;
+      row.appendChild(typeCell);
 
-    const typeCell = document.createElement("td");
-    typeCell.classList.add("p-2", "border", "border-gray-400", "text-white");
-    typeCell.innerText = type;
-    row.appendChild(typeCell);
-
-    contactList.appendChild(row);
-  });
-
-   
+      contactList.appendChild(row);
+    });
+  }
 };
 
 document.addEventListener("DOMContentLoaded", getContacts);
@@ -194,7 +198,6 @@ document.addEventListener("DOMContentLoaded", getContacts);
 //       //   break;
 // //   }
 // // })
-
 
 // const handleFormData = (e) => {
 //   console.log("form is fired");
